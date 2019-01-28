@@ -150,3 +150,81 @@ signedIntent.relay(my_provider)
 todo
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+# Reading the Status
+
+A receipt with the current execution status is available; it contains information about the current progression of execution and the result of such process.
+
+Intent execution is an asynchronous process; the time range goes from a couple of minutes to several hours to complete the execution of a relayed intent.
+
+## Status pending
+
+If the status is pending, the intent wasn't registered on the blockchain yet. This process can take from a couple of minutes to several hours.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+from marmopy import SignedIntent
+
+status = signedIntent.status()
+
+print(status["code"]) # 'pending'
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+## Status settling & completed
+
+If the status is settling or completed, the intent is registered on the blockchain, and thus it's intended action was executed.
+
+The result of the call can be accessed on the receipt of the status.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+from marmopy import SignedIntent
+
+status = signedIntent.status()
+
+print(status["code"]) # 'completed'
+
+print(status["receipt"]["block"]) # 4059291
+print(status["receipt"]["success"]) # True / False
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+> When the status code is settling, it means that the Intent was executed, but it may get reverted by internal workings of the Ethereum network, this status usually last for 8 minutes.
+### Receipt success
+
+Transactions in Ethereum can fail and revert all changes performed, and a broad set of reasons can cause this, (asserts, low fees, code errors, etc.)
+
+The receipt contains a `success` flag to know if an Intent execution was successful or not.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+print(status["receipt"]["success"]) # True / False
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
