@@ -50,9 +50,7 @@ TODO
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Local configuration
-
-TODO
+An example on how to use local configuration is available, [Local configuration](wallet#using-a-custom-configuration)
 
 # Provider
 
@@ -91,7 +89,7 @@ TODO
 <!--END_DOCUSAURUS_CODE_TABS-->
 > The provider can be defined as the global provider, 
 
-### Test provider
+### Sandbox provider
 
 We provide a Relayer and Ethereum Node intended to be used by developers on the Ethereum Ropsten network.
 

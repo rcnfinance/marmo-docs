@@ -1,5 +1,9 @@
 {
   "docs": {
-    "Getting Started": ["intro", "setup"]
+    "Getting Started": [
+      "intro",
+      "setup",
+      "wallet"
+    ]
   }
 }
