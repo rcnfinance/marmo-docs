@@ -41,9 +41,7 @@ todo
 
 ### Sending ERC20 Tokens
 
-To send Tokens is required to specify the address of the token*, the destination of the transfer, and the amount to transfer. 
-
->All tokens have an assigned address, belonging to the contract managing all the token logic.
+To send Tokens is required to specify the address of the token, the destination of the transfer, and the amount to transfer. 
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -68,7 +66,6 @@ intent = Intent(intent_action = intentAction)
 todo
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
-
 
 ## Signing an intent
 
