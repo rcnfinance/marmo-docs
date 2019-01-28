@@ -46,7 +46,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/tmp_logo.png',
-  footerIcon: 'img/tmp_logo.png',
+  footerIcon: 'img/tmp_logo_sq.png',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
