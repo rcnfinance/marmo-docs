@@ -35,7 +35,9 @@ If the client only needs to interact with a single Marmo configuration in the wh
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-TODO
+import { DefaultConf } from "marmojs"
+
+DefaulltConf.ROPSTEN.asDefault()
 ```
 <!--Python-->
 ```python
@@ -68,7 +70,6 @@ The Ethereum node is going to be providing all information about the status of t
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-TODO
 ```
 <!--Python-->
 ```python
