@@ -68,3 +68,85 @@ intent = Intent(intent_action = intentAction)
 todo
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+
+## Signing an intent
+
+Before relaying the intent, the wallet must attach its signature, transforming it into a "Signed intent".
+
+Signed Intents contain a unique ID, and also data on which wallet approved the action.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+from marmopy import Intent, Wallet
+
+wallet = Wallet("<private key here>")
+intent = Intent(intent_action = intentAction)
+
+signedIntent = wallet.sign(intent)
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+> The same Intent signed by different wallets will result in different IDs
+
+## Relaying an Intent
+
+When an Intent is already signed, it's ready to be sent to a relayer; this relayer is going to perform the requested actions on the Blockchain.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+from marmopy import Intent, Wallet
+
+wallet = Wallet("<private key here>")
+intent = Intent(intent_action = intentAction)
+
+signedIntent = wallet.sign(intent)
+
+signedIntent.relay()
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Custom Relayer provider
+
+By default, the SDK uses the default provider to obtain the relayer but is possible to pass your custom provider to the `relay()` method. 
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+from marmopy import Intent, Wallet, Provider
+
+wallet = Wallet("<private key here>")
+intent = Intent(intent_action = intentAction)
+
+signedIntent = wallet.sign(intent)
+
+my_provider = Provider("<eth node url>", "<relayer url>")
+signedIntent.relay(my_provider)
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->

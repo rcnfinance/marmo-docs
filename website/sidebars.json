@@ -3,7 +3,8 @@
     "Getting Started": [
       "intro",
       "setup",
-      "wallet"
+      "wallet",
+      "intents"
     ]
   }
 }
