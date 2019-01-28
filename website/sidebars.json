@@ -5,6 +5,10 @@
       "setup",
       "wallet",
       "intents"
+    ],
+    "Api reference": [
+      "api_config",
+      "api_wallet"
     ]
   }
 }
