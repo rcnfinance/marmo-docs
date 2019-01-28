@@ -35,9 +35,10 @@ If the client only needs to interact with a single Marmo configuration in the wh
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-import { DefaultConf } from "marmojs"
+import { DefaultConf } from "marmojs";
 
-DefaulltConf.ROPSTEN.asDefault()
+// Select the Ropsten testnet configuration
+DefaulltConf.ROPSTEN.asDefault();
 ```
 <!--Python-->
 ```python
@@ -70,12 +71,17 @@ The Ethereum node is going to be providing all information about the status of t
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
+import { Provider } from "marmojs"
+
+provider = new Provider(
+    '<url of the ethereum node>',
+    '<url of the relayer>'
+);
 ```
 <!--Python-->
 ```python
 from marmopy import Provider
 
-# Select the Ropsten testnet configuration
 provider = Provider(
     '<url of the ethereum node>',
     '<url of the relayer>'
@@ -97,7 +103,12 @@ We provide a Relayer and Ethereum Node intended to be used by developers on the 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-TODO
+import { Provider } from "marmojs";
+
+const ethNode = "https://ropsten.node.rcn.loans:8545/";
+const relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
+
+provider = new Provider(ethNode, relayer);
 ```
 <!--Python-->
 ```python

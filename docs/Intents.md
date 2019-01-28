@@ -46,7 +46,21 @@ To send Tokens is required to specify the address of the token, the destination 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { IntentBuilder, Intent, ERC20, BigNumber } from "marmojs";
+
+// Test ERC20 token contract 
+const token = new ERC2O("0x2f45b6fb2f28a73f110400386da31044b2e953d4");
+
+// Transfer 1 Token (RCN has 18 decimals)
+const value = new BigNumber(10).pow(new BigNumber(18));
+
+// Create Intent action
+const intentAction = token.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB", value);
+
+// Create Intent
+const intent = new IntentBuilder()
+    .withIntentAction(intentAction)
+    .build();
 ```
 <!--Python-->
 ```python
@@ -76,7 +90,11 @@ Signed Intents contain a unique ID, and also data on which wallet approved the a
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+
+signedIntent = wallet.sign(intent);
 ```
 <!--Python-->
 ```python
@@ -102,7 +120,9 @@ When an Intent is already signed, it's ready to be sent to a relayer; this relay
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { SignedIntent } from "marmojs";
+
+signedIntent.relay();
 ```
 <!--Python-->
 ```python
@@ -128,7 +148,11 @@ By default, the SDK uses the default provider to obtain the relayer but is possi
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { Provider, SignedIntent } from "marmojs";
+
+const myProvider = new Provider("<eth node url>", "<relayer url>")
+
+signedIntent.relay(myProvider);
 ```
 <!--Python-->
 ```python
@@ -161,7 +185,11 @@ If the status is pending, the intent wasn't registered on the blockchain yet. Th
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { SignedIntent } from "marmojs";
+
+const status = await signedIntent.status();
+
+console.log(status.code); // 'pending'
 ```
 <!--Python-->
 ```python
@@ -186,7 +214,13 @@ The result of the call can be accessed on the receipt of the status.
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+timport { SignedIntent } from "marmojs";
+
+const status = await signedIntent.status();
+
+console.log(status.code); // 'completed'
+console.log(status.receipt.block); // 4059291
+console.log(status.receipt.success); // true or false
 ```
 <!--Python-->
 ```python
@@ -214,7 +248,7 @@ The receipt contains a `success` flag to know if an Intent execution was success
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+console.log(status.receipt.success); // true or false
 ```
 <!--Python-->
 ```python

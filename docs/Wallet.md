@@ -16,7 +16,10 @@ Wallet creation is free, and there is no limit on how many wallets can be create
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+console.log(wallet.address); // The address of the Marmo wallet
 ```
 <!--Python-->
 ```python
@@ -42,7 +45,18 @@ If a global configuration is defined, the SDK will automatically assign that con
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { Wallet, Config } from "marmojs";
+
+const customConfig = new Config(
+    "<init contract>",
+    "<factory>",
+    "<multi_dependency_contract>",
+    3
+);
+
+const wallet = new Wallet("<private key here>", customConfig);
+
+wallet.address; // The address of the Marmo wallet
 ```
 <!--Python-->
 ```python
