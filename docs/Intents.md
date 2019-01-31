@@ -30,7 +30,13 @@ todo
 ```
 <!--Python-->
 ```python
-todo
+from marmopy import Intent, ETH
+
+# Transfer 10 Ethers (ETH has 18 decimals)
+intentAction = ETH.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB", 10 ** 18)
+
+# Create intent from intent action
+intent = Intent(intent_action = intentAction)
 ```
 <!--Java-->
 ```java
@@ -64,7 +70,7 @@ const intent = new IntentBuilder()
 ```
 <!--Python-->
 ```python
-from marmopy import Intent, IntentAction, ERC20
+from marmopy import Intent, ERC20
 
 # Test ERC20 token contract 
 token = ERC20("0x2f45b6fb2f28a73f110400386da31044b2e953d4")
