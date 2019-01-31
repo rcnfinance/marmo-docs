@@ -12,9 +12,9 @@ Creates a new provider object
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-import { Provider } from "marmojs"
+import { Provider } from "marmojs";
 
-new Provider(eth_node, relayer_url)
+new Provider(eth_node, relayer_url);
 ```
 #### Parameters
 1. `eth_node` - `string | Web3`: The Ethereum node used to read information of the network (It can be provided as a Web3 instance).

@@ -16,7 +16,7 @@ npm install marmojs-sdk
 ```
 <!--Python-->
 ```shell
-todo
+pip install marmopy
 ```
 <!--Java-->
 ```shell
