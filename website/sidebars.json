@@ -8,8 +8,8 @@
     ],
     "Api reference": [
       "api_config",
-      "api_wallet",
-      "api_provider"
+      "api_provider",
+      "api_wallet"
     ]
   }
 }
