@@ -45,14 +45,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/tmp_logo.png',
-  footerIcon: 'img/tmp_logo_sq.png',
+  headerIcon: 'img/marmo-logo.svg',
+  footerIcon: 'img/marmo-logo-footer.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#317174',
-    secondaryColor: '#F4E9C1',
+    primaryColor: '#ec872c',
+    secondaryColor: '#F7C34D',
   },
 
   /* Custom fonts for website */
@@ -95,7 +95,7 @@ const siteConfig = {
   // Show documentation's last update time.
   enableUpdateTime: true,
 
-  editUrl: 'https://github.com/ripio/marmo-docs/tree/master/docs',
+  editUrl: 'https://github.com/ripio/marmo-docs/tree/master/docs/',
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
