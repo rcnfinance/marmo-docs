@@ -9,7 +9,9 @@
     "Api reference": [
       "api_config",
       "api_provider",
-      "api_wallet"
+      "api_wallet",
+      "api_intent_action",
+      "api_intent"
     ]
   }
 }
