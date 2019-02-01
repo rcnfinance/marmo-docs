@@ -82,20 +82,7 @@ class Footer extends React.Component {
             </a>
           </div>
         </section>
-
-        <a
-          href="https://code.facebook.com/projects/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fbOpenSource">
-          <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
-        <section className="copyright">{this.props.config.copyright}</section>
+        <section className="copyright">{this.props.config.copyright} - Docs powered by <a href="https://docusaurus.io/" target="_blank">Docusaurus </a></section>
       </footer>
     );
   }
