@@ -11,7 +11,8 @@
       "api_provider",
       "api_wallet",
       "api_intent_action",
-      "api_intent"
+      "api_intent",
+      "api_signed_intent"
     ]
   }
 }
