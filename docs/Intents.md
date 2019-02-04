@@ -40,7 +40,16 @@ intent = Intent(intent_action = intentAction)
 ```
 <!--Java-->
 ```java
-todo
+ISendEth sendEth = new ETH();
+
+// Transfer 10 Ethers (ETH has 18 decimals)
+IntentAction intentAction = sendEth
+    .send("0x009ab4de1234c7066197d6ed75743add3576591f", BigInteger.TEN.pow(18));
+    
+// Create intent from intent action
+Intent intent = IntentBuilder.anIntent()
+    .withIntentAction(intentAction)
+    .build();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
