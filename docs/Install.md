@@ -20,7 +20,8 @@ pip install marmopy
 ```
 <!--Java-->
 ```shell
-todo
+gradle:
+compile ('network.marmoj:core:0.1.0')
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
