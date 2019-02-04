@@ -40,6 +40,9 @@ intent = Intent(intent_action = intentAction)
 ```
 <!--Java-->
 ```java
+import network.marmoj.builder.IntentBuilder;
+import network.marmoj.model.data.ETH;
+
 ISendEth sendEth = new ETH();
 
 // Transfer 10 Ethers (ETH has 18 decimals)
