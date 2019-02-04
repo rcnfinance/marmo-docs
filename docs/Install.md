@@ -121,6 +121,11 @@ provider = Provider(eth_node, relayer)
 ```
 <!--Java-->
 ```java
-TODO
+import network.marmoj.config.Provider;
+
+String ethNode = "https://ropsten.node.rcn.loans:8545/";
+String relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
+
+Provider provider = new Provider(ethNode, relayer);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
