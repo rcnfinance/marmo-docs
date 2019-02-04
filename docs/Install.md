@@ -51,7 +51,7 @@ DefaultConf.ROPSTEN.as_default()
 ```java
 import network.marmoj.config.DefaultConf;
 
-# Select the Ropsten testnet configuration
+// Select the Ropsten testnet configuration
 DefaultConf.ROPSTEN.asDefault();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
