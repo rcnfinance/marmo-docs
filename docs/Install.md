@@ -12,7 +12,7 @@ Marmo library is available in Java, Javascript and Python, the library has pre-l
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```shell
-npm install marmo-sdk
+npm install marmojs
 ```
 <!--Python-->
 ```shell
