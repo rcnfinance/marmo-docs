@@ -174,7 +174,20 @@ signedIntent.relay(my_provider)
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+import network.marmoj.builder.IntentBuilder;
+import network.marmoj.model.Wallet;
+
+SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
+    .withIntent(intent)
+    .withWallet(wallet)
+    .build();
+    
+Provider provider = new Provider(
+      "<relayer here>",
+      "<node here>"
+  );
+signedIntent.relay(provider);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
