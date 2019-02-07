@@ -94,7 +94,12 @@ provider.as_default()
 ```
 <!--Java-->
 ```java
-TODO
+import network.marmoj.config.Provider;
+
+Provider provider = new Provider(
+        "<url of the ethereum node>", 
+        "<url of the relayer>"
+);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 > The provider can be defined as the global provider, 
