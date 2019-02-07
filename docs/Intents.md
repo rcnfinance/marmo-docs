@@ -255,7 +255,11 @@ print(status["code"]) # 'pending'
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+
+Status status = signedIntent.getStatus();
+
+System.out.println(status.getCode()); // 'pending'
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -289,7 +293,13 @@ print(status["receipt"]["success"]) # True / False
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+
+Status status = signedIntent.getStatus();
+
+System.out.println(status.getCode()); // 'completed'
+System.out.println(status.getReceipt().getBlock()); // '4059291'
+System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 > When the status code is settling, it means that the Intent was executed, but it may get reverted by internal workings of the Ethereum network, this status usually last for 8 minutes.
@@ -310,6 +320,6 @@ print(status["receipt"]["success"]) # True / False
 ```
 <!--Java-->
 ```java
-todo
+System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
