@@ -30,7 +30,10 @@ wallet.address # The address of the Marmo wallet
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.model.Wallet;
+
+Wallet wallet = new Wallet("<private key here>");
+System.out.println(wallet.getAddress()); // The address of the Marmo wallet
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
