@@ -40,7 +40,7 @@ todo
 | Salt          | false    | 0x                      | Unique identifier of the Intent, used to send multiple equal intents, and to avoid Intent replay. |
 | Expiration    | false    | current time + 365 days | Expiration of the signed intent, after this unix time the Intent is no longer valid.              |
 | Max gas price | false    | 2 ** 256 - 1            | Top limit gas price, it is used for applications that penalize users who pay high gas prices.     |
-| Min gas limit | false    | 0                       | Min gas required to relay the Intent, used for limiting relayer malleability.                     |
+| Max gas limit | false    | 2 ** 256 - 1            | Max gas used to relay the Intent.                                                                 |
 
 ### Dependencies
 
@@ -146,11 +146,9 @@ todo
 
 > It's recommended to leave this value as default, to ensure a better chance of the Intent being relayed
 
-### Min gas limit
+### Max gas limit
 
-`Min gas price` set's the minimum required gas to execute the Intent.
-
-In ideal circumstances, the relayer can be trusted to choose the right gas limit, but in the case of a non-trusted relayer, it's recommended to define this value manually.
+`Max gas limit` set's the maximun used gas to execute the Intent.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -162,7 +160,7 @@ todo
 from marmopy import Intent
 
 # 5 gwei max gas price
-intent = Intent(intent_action=intent_action, min_gas_limit=200000)
+intent = Intent(intent_action=intent_action, max_gas_limit=200000)
 ```
 <!--Java-->
 ```java
