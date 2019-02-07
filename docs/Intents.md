@@ -95,7 +95,22 @@ intent = Intent(intent_action = intentAction)
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.IntentBuilder;
+import network.marmoj.model.data.ERC20;
+
+// Test ERC20 token contract
+ERC20 token = new ERC20("0x6B0F919A5d450Fa5e6283Ff6178dC1FCd195FD2A");
+
+// Transfer 1 Token (RCN has 18 decimals)
+IntentAction intentAction = token.transfer(
+    new Address("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB"),
+    new Uint256(BigInteger.TEN.pow(18))
+);
+
+// Create intent from intent action
+Intent intent = IntentBuilder.anIntent()
+    .withIntentAction(intentAction)
+    .build();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
