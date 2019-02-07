@@ -72,7 +72,16 @@ wallet.address # The address of the Marmo wallet
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.config.Config;
+
+Config config = new Config(
+    "<init_contract>",
+    "<factory>",
+    "<multi_dependency_contract>",
+    "<implementation_contract>",
+    "<network_id>"
+);
+Wallet wallet = new Wallet("<private key here>", config);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
