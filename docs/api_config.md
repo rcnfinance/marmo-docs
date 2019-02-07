@@ -50,8 +50,27 @@ Configuration object
 
 <!--Java-->
 ```java
-todo
+import network.marmoj.config.Config;
+
+new Conf(initCode, marmoFactory, depsUtils, implementation, networkId);
 ```
+
+#### Parameters
+
+1. `initCode` - `String`: keccak256 hash of the initCode of each Marmo wallet contract.
+
+2. `marmoFactory` - `String`: Address of the contract creating the wallets.
+
+3. `deps_utils` - `String`: Contract with dependency utils, (must implement `multipleDeps`)
+
+4. `implementation` - `String`: Contract address with implementation 
+
+5. `networkId` - `Integer`: Id number of the Ethereum network being used
+
+#### Returns
+
+Configuration object
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ## config as default ()
@@ -70,7 +89,7 @@ config.as_default()
 ```
 <!--Java-->
 ```java
-todo
+config.asDefault();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -96,6 +115,8 @@ DefaultConf.ROPSTEN
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.config.DefaultConf;
+
+DefaultConf.ROPSTEN;
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
