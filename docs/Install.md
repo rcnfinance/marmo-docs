@@ -20,7 +20,6 @@ pip install marmopy
 ```
 <!--Java-->
 ```shell
-<!--DOCUSAURUS_CODE_TABS-->
 <!--Gradle-->
 ```shell
 compile ('network.marmoj:core:0.1.0')
@@ -33,7 +32,6 @@ compile ('network.marmoj:core:0.1.0')
     <version>0.1.0</version>
 </dependency>
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
