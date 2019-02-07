@@ -170,7 +170,15 @@ signedIntent.relay()
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+import network.marmoj.builder.IntentBuilder;
+import network.marmoj.model.Wallet;
+
+SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
+    .withIntent(intent)
+    .withWallet(wallet)
+    .build();
+signedIntent.relay()
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
