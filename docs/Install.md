@@ -20,8 +20,20 @@ pip install marmopy
 ```
 <!--Java-->
 ```shell
-gradle:
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Gradle-->
+```shell
 compile ('network.marmoj:core:0.1.0')
+```
+<!--Maven-->
+```shell
+<dependency>
+    <groupId>network.marmoj</groupId>
+    <artifactId>core</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
