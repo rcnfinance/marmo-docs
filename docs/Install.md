@@ -18,8 +18,6 @@ npm install marmojs
 ```shell
 pip install marmopy
 ```
-<!--Java-->
-```shell
 <!--Gradle-->
 ```shell
 compile ('network.marmoj:core:0.1.0')
@@ -31,7 +29,6 @@ compile ('network.marmoj:core:0.1.0')
     <artifactId>core</artifactId>
     <version>0.1.0</version>
 </dependency>
-```
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
