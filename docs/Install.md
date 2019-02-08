@@ -18,11 +18,12 @@ npm install marmojs
 ```shell
 pip install marmopy
 ```
-<!--Gradle-->
+<!--Java-->
+#### Gradle
 ```shell
 compile ('network.marmoj:core:0.1.0')
 ```
-<!--Maven-->
+#### Maven
 ```shell
 <dependency>
     <groupId>network.marmoj</groupId>
