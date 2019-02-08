@@ -39,7 +39,13 @@ Provider(eth_node, relayer_url)
 
 <!--Java-->
 ```java
-todo
+import network.marmoj.config.Provider;
+
+new Provider(ethNode, relayerUrl);
+```
+#### Parameters
+1. `ethNode` - `String | Web3`: The Ethereum node used to read information of the network (It can be provided as a Web3 instance).
+2. `relayerUrl` - `String`: The Relayer used to send Intents.
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -59,6 +65,6 @@ provider.as_default()
 ```
 <!--Java-->
 ```java
-todo
+provider.asDefault();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
