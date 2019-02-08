@@ -140,7 +140,12 @@ signedIntent = wallet.sign(intent)
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+
+SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
+    .withIntent(intent)
+    .withWallet(wallet)
+    .build();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
