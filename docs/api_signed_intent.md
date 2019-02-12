@@ -12,7 +12,11 @@ The last step in building a valid Intent is Signing; this process generates the 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
 ```js
-todo
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+
+signedIntent = wallet.sign(intent)
 ```
 <!--Python-->
 ```python
@@ -24,7 +28,12 @@ signed_intent = wallet.sign(intent)
 ```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+
+SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
+    .withIntent(intent)
+    .withWallet(wallet)
+    .build();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
