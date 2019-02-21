@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Marmo documentation', // Title for your website.
+  title: 'Marmo Documentation', // Title for your website.
   tagline: 'Documentation of the Ethereum wallet developer suit Marmo',
   url: 'https://marmo.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
