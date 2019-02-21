@@ -1,11 +1,11 @@
 ---
 id: setup
-title: First steps
+title: Setup
 ---
 
-# Install
+# Installation
 
-Marmo library is available in Java, Javascript and Python, the library has pre-loaded the configuration to interact with Marmo in the Ropsten testnet and Ethereum Mainnet.
+Marmo libraries are available in Java, Javascript and Python, and include pre-loaded configurations to interact with Marmo in the Ropsten Testnet and Ethereum Mainnet.
 
 ### Javascript
 
@@ -35,11 +35,11 @@ compile ('network.marmoj:core:0.1.0')
 
 # Configuration
 
-In order to use Marmo in different networks and different versions of Marmo, is required to specify a configuration to use. The Marmo-SDK already contains configurations ready to roll on different networks.
+In order to deploy Marmo across different networks and employ its different versions it is necessary to implement specific configurations for it, which are already included on the SDK.
 
 ## Global configuration
 
-If the client only needs to interact with a single Marmo configuration in the whole project, the configuration can be defined as default.
+If the client only needs to interact with a single Marmo configuration for the whole project, that configuration can be defined as default.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -65,20 +65,19 @@ DefaultConf.ROPSTEN.asDefault();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-An example on how to use local configuration is available, [Local configuration](wallet#using-a-custom-configuration)
+An example on how to use local configuration can be found [here](wallet#using-a-custom-configuration)
 
 # Provider
 
-The provider is the combination of services that are going to be used to talk with the Ethereum network.
+The Provider is the combination of services that allow Marmo to communicate with the Ethereum network.
 
 ## Relayer
 
-The Relayer is in charge of wrapping and broadcasting all the signed Intents, is going to be responsible for paying the fees to the Ethereum network.
+The Relayer is in charge of broadcasting all signed Intents to the Ethereum network as Transactions, while also paying for their fees.
 
-## Ethereum node
+## Ethereum Node
 
-The Ethereum node is going to be providing all information about the status of the intents; this node has to be operating in the same network where is deployed the chosen Marmo configuration.
-
+The Ethereum Node provides all the relevant information about the intents' status. The Node must operate in the same network where the chosen Marmo configuration has been deployed.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -111,11 +110,11 @@ Provider provider = new Provider(
 );
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
-> The provider can be defined as the global provider, 
+> The Provider can be defined as the Global Provider. 
 
-### Sandbox provider
+## Sandbox provider
 
-We provide a Relayer and Ethereum Node intended to be used by developers on the Ethereum Ropsten network.
+We provide a Relayer and an Ethereum Node intended to be used by developers on the Ethereum Ropsten Testnet.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
