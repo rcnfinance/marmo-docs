@@ -1,16 +1,17 @@
 ---
-id: intents
+id: intents_transactions
 title: Intents and Transactions
 ---
 
-Transactions within the Marmo ecosystem are called Intents; those Intents represent the desired action of the signer and are executed on the Ethereum network by a relayer. This relayer has little to no control over the intention of the signer.
+Transactions that take place within Marmo are called Intents. Every Intent represents a signer's intention to broadcast a transaction to the Ethereum network. Intents get executed (effectively becoming Transactions) by the Relayer, which nevertheless has little to no control over their content. This characteristic guarantees the system's trustlessness and security. 
 
-## Building an Intent
+(WIP)
 
-Intents can perform a wide variety of operations, ranging from sending cryptocurrency to interacting with complex platforms built using the 
-Ethereum technology.
+# Intent Building
 
-#### Intent action
+Intents can perform a wide array of operations, ranging from sending cryptocurrency to interacting with complex platforms built on the Ethereum network.
+
+## Intent action
 
 Inside Intents we have Intent actions, those are the representation of the desired operation to perform, but it has no information about the rules of execution
 
