@@ -1,6 +1,6 @@
 ---
-id: intro
-title: Introduction to Marmo
+id: introduction
+title: Introduction
 ---
 
 # What is Marmo?
