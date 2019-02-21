@@ -3,10 +3,10 @@
     "Getting Started": [
       "intro",
       "setup",
-      "wallet",
-      "intents"
+      "wallets",
+      "intents_transactions"
     ],
-    "Api reference": [
+    "API Reference": [
       "api_config",
       "api_provider",
       "api_wallet",
