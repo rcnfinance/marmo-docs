@@ -3,7 +3,7 @@ id: setup
 title: Setup
 ---
 
-# Installation
+# Installing Marmo
 
 Marmo libraries are available in Java, Javascript and Python, and include pre-loaded configurations to interact with Marmo in the Ropsten Testnet and Ethereum Mainnet.
 
@@ -33,7 +33,7 @@ compile ('network.marmoj:core:0.1.0')
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-# Configuration
+# Choosing a Configuration
 
 In order to deploy Marmo across different networks and employ its different versions it is necessary to implement specific configurations for it, which are already included on the SDK.
 
