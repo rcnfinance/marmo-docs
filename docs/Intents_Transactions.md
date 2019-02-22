@@ -5,24 +5,25 @@ title: Intents and Transactions
 
 Transactions that take place within Marmo are called Intents. Every Intent represents a signer's intention to broadcast a transaction to the Ethereum network. Intents get executed (effectively becoming Transactions) by the Relayer, which nevertheless has little to no control over their content. This characteristic guarantees the system's trustlessness and security. 
 
-(WIP)
+# Intents
 
-# Intent Building
+Intents can perform a wide array of operations, ranging from sending cryptocurrency to interacting with complex services built on the Ethereum network.
 
-Intents can perform a wide array of operations, ranging from sending cryptocurrency to interacting with complex platforms built on the Ethereum network.
+## Intent Actions
 
-## Intent action
-
-Inside Intents we have Intent actions, those are the representation of the desired operation to perform, but it has no information about the rules of execution
+Every Intent includes a series of Intent Actions, which are representations of the operations the signer wants to perform. The Intent Actions do not include information on how those operations are to be executed, allowing the Relayer to implement the most efficient strategy each time.
 
 ```
 Intent Action: Do X
 Intent: Do [Intent action] before [time]
 ```
+# Sending Cryptocurrency
 
-### Sending ETH
+Intents can be used to send cryptocurrency from one Wallet to another (including standard Ethereum Wallets not related to Marmo).
 
-ETH is the main cryptocurrency existing on the Ethereum network; it has a special place on the protocol, therefore making transfers of this currency is the most basic example of an Intent.
+## Sending ETH
+
+Ether (ETH) is the cryptocurrency that powers the Ethereum network. Making ETH transactions is the most basic example of an Intent.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -57,10 +58,9 @@ Intent intent = IntentBuilder.anIntent()
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
+## Sending ERC20 Tokens
 
-### Sending ERC20 Tokens
-
-To send Tokens is required to specify the address of the token, the destination of the transfer, and the amount to transfer. 
+ERC-20 Tokens are cryptocurrencies created and used on the Ethereum network. In order to send one of these Tokens it is necessary to specify the Token's address, the transfer's destination and its amount. 
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -115,11 +115,11 @@ Intent intent = IntentBuilder.anIntent()
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Signing an intent
+# Signing an Intent
 
-Before relaying the intent, the wallet must attach its signature, transforming it into a "Signed intent".
+Before the Relayer can process an Intent (or "relay" it) the Wallet which created it must attach its signature to it, transforming it into a Signed Intent.
 
-Signed Intents contain a unique ID, and also data on which wallet approved the action.
+Signed Intents contain an unique ID and information about the Wallet that signed them.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -150,11 +150,11 @@ SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> The same Intent signed by different wallets will result in different IDs
+> The same Intent signed by different Wallets will result in different IDs.
 
-## Relaying an Intent
+# Relaying an Intent
 
-When an Intent is already signed, it's ready to be sent to a relayer; this relayer is going to perform the requested actions on the Blockchain.
+Once an Intent is signed it is ready to be sent to the Relayer, which will broadcast it to the Ethereum network and pay the necessary ammount of ETH to complete the operation.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -188,9 +188,9 @@ signedIntent.relay()
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-### Custom Relayer provider
+## Custom Relayer Provider
 
-By default, the SDK uses the default provider to obtain the relayer but is possible to pass your custom provider to the `relay()` method. 
+The SDK is configured to use a default provider to obtain the Relayer, but it is also possible to select a custom provider using the `relay()` function.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -232,15 +232,13 @@ signedIntent.relay(provider);
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-# Reading the Status
+# Intent Status
 
-A receipt with the current execution status is available; it contains information about the current progression of execution and the result of such process.
+Intent execution is an asynchronous process that can take from a couple of minutes to several hours to complete. To allow clients to oversee it, Marmo offers receipts on its execution status which include information about the process' progress and results.
 
-Intent execution is an asynchronous process; the time range goes from a couple of minutes to several hours to complete the execution of a relayed intent.
+## Status "Pending"
 
-## Status pending
-
-If the status is pending, the intent wasn't registered on the blockchain yet. This process can take from a couple of minutes to several hours.
+If the receipt shows the status as "Pending", it means that the Intent has not been registered on the blockchain yet.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -269,11 +267,9 @@ System.out.println(status.getCode()); // 'pending'
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Status settling & completed
+## Status "Settling" or "Completed"
 
-If the status is settling or completed, the intent is registered on the blockchain, and thus it's intended action was executed.
-
-The result of the call can be accessed on the receipt of the status.
+If the receipt shows the status as "Settling" or "Completed", it means that the Intent has been registered on the blockchain and that its intended action has been executed. The executed Intent's result can also be accessed on the status receipt.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
@@ -308,12 +304,11 @@ System.out.println(status.getReceipt().getBlock()); // '4059291'
 System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
-> When the status code is settling, it means that the Intent was executed, but it may get reverted by internal workings of the Ethereum network, this status usually last for 8 minutes.
-### Receipt success
+> While a "Settling" status means that the Intent was executed, this may get reverted by the internal workings of the Ethereum network. This status usually lasts up to 8 minutes.
 
-Transactions in Ethereum can fail and revert all changes performed, and a broad set of reasons can cause this, (asserts, low fees, code errors, etc.)
+## Receipt Success
 
-The receipt contains a `success` flag to know if an Intent execution was successful or not.
+The receipt contains a `success` flag that indicates whether the Intent execution was successful or not.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--JavaScript-->
