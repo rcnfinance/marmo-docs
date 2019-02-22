@@ -7,7 +7,7 @@ Marmo Wallets behave like accounts. Each Wallet is independent and can be used t
 
 Each Wallet is associated with a Private Key, which is required to operate with that Wallet. Any person or software with access to the Key can make use of the wallet, effectively becoming its owner. Therefore, it is crucial for the true owner of the Key to keep it secret at all times.
 
-# Wallet Creation
+# Creating a Wallet
 
 Wallets can be created at any moment, even if the client is offline. This is possible because Marmo creates Wallets by taking Private Keys and calculating the Wallets' adresses using them, a process that does not require Internet connection.
 
