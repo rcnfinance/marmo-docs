@@ -10,17 +10,26 @@ Marmo library is available in Java, Javascript and Python, the library has pre-l
 ### Javascript
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```shell
-npm install marmojs
-```
 <!--Python-->
 ```shell
 pip install marmopy
 ```
-<!--Java-->
+<!--JavaScript-->
 ```shell
-todo
+npm install marmojs
+```
+<!--Java-->
+#### Gradle
+```shell
+compile ('network.marmoj:core:0.1.0')
+```
+#### Maven
+```shell
+<dependency>
+    <groupId>network.marmoj</groupId>
+    <artifactId>core</artifactId>
+    <version>0.1.0</version>
+</dependency>
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -33,19 +42,19 @@ In order to use Marmo in different networks and different versions of Marmo, is 
 If the client only needs to interact with a single Marmo configuration in the whole project, the configuration can be defined as default.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { DefaultConf } from "marmojs";
-
-// Select the Ropsten testnet configuration
-DefaulltConf.ROPSTEN.asDefault();
-```
 <!--Python-->
 ```python
 from marmopy import DefaultConf
 
 # Select the Ropsten testnet configuration
 DefaultConf.ROPSTEN.as_default()
+```
+<!--JavaScript-->
+```js
+import { DefaultConf } from "marmojs";
+
+// Select the Ropsten testnet configuration
+DefaulltConf.ROPSTEN.asDefault();
 ```
 <!--Java-->
 ```java
@@ -72,15 +81,6 @@ The Ethereum node is going to be providing all information about the status of t
 
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Provider } from "marmojs"
-
-provider = new Provider(
-    '<url of the ethereum node>',
-    '<url of the relayer>'
-);
-```
 <!--Python-->
 ```python
 from marmopy import Provider
@@ -91,6 +91,15 @@ provider = Provider(
 )
 
 provider.as_default()
+```
+<!--JavaScript-->
+```js
+import { Provider } from "marmojs"
+
+provider = new Provider(
+    '<url of the ethereum node>',
+    '<url of the relayer>'
+);
 ```
 <!--Java-->
 ```java
@@ -109,15 +118,6 @@ Provider provider = new Provider(
 We provide a Relayer and Ethereum Node intended to be used by developers on the Ethereum Ropsten network.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Provider } from "marmojs";
-
-const ethNode = "https://ropsten.node.rcn.loans:8545/";
-const relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
-
-provider = new Provider(ethNode, relayer);
-```
 <!--Python-->
 ```python
 from marmopy import Provider
@@ -126,6 +126,15 @@ eth_node = "https://ropsten.node.rcn.loans:8545/"
 relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/"
 
 provider = Provider(eth_node, relayer)
+```
+<!--JavaScript-->
+```js
+import { Provider } from "marmojs";
+
+const ethNode = "https://ropsten.node.rcn.loans:8545/";
+const relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
+
+provider = new Provider(ethNode, relayer);
 ```
 <!--Java-->
 ```java

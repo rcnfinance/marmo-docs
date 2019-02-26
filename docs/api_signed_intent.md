@@ -10,10 +10,6 @@ A SignedIntent is the complete definition of Intent in the Marmo ecosystem, it h
 The last step in building a valid Intent is Signing; it generates an object containing the Intent, ID, wallet, and signature.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-todo
-```
 <!--Python-->
 ```python
 from marmopy import Wallet
@@ -22,9 +18,22 @@ wallet = Wallet("<your private key here>")
 
 signed_intent = wallet.sign(intent)
 ```
+<!--JavaScript-->
+```js
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+
+signedIntent = wallet.sign(intent)
+```
 <!--Java-->
 ```java
-todo
+import network.marmoj.builder.SignedIntentBuilder;
+
+SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
+    .withIntent(intent)
+    .withWallet(wallet)
+    .build();
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
