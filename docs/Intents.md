@@ -330,7 +330,7 @@ System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Receipt output
+### Receipt output
 
 If the Intent succeeded this receipt contains the output of the called function, it can be accessed as an array of values.
 
