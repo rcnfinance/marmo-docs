@@ -24,10 +24,6 @@ Intent: Do [Intent action] before [time]
 ETH is the main cryptocurrency existing on the Ethereum network; it has a special place on the protocol, therefore making transfers of this currency is the most basic example of an Intent.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-todo
-```
 <!--Python-->
 ```python
 from marmopy import Intent, ETH
@@ -37,6 +33,10 @@ intentAction = ETH.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB", 10 ** 
 
 # Create intent from intent action
 intent = Intent(intent_action = intentAction)
+```
+<!--JavaScript-->
+```js
+todo
 ```
 <!--Java-->
 ```java
@@ -62,6 +62,19 @@ Intent intent = IntentBuilder.anIntent()
 To send Tokens is required to specify the address of the token, the destination of the transfer, and the amount to transfer. 
 
 <!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+from marmopy import Intent, ERC20
+
+# Test ERC20 token contract 
+token = ERC20("0x2f45b6fb2f28a73f110400386da31044b2e953d4")
+
+# Transfer 1 Token (RCN has 18 decimals)
+intentAction = token.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB", 10 ** 18)
+
+# Create intent from intent action
+intent = Intent(intent_action = intentAction)
+```
 <!--JavaScript-->
 ```js
 import { IntentBuilder, Intent, ERC20, BigNumber } from "marmojs";
@@ -79,19 +92,6 @@ const intentAction = token.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB"
 const intent = new IntentBuilder()
     .withIntentAction(intentAction)
     .build();
-```
-<!--Python-->
-```python
-from marmopy import Intent, ERC20
-
-# Test ERC20 token contract 
-token = ERC20("0x2f45b6fb2f28a73f110400386da31044b2e953d4")
-
-# Transfer 1 Token (RCN has 18 decimals)
-intentAction = token.transfer("0x7F5EB5bB5cF88cfcEe9613368636f458800e62CB", 10 ** 18)
-
-# Create intent from intent action
-intent = Intent(intent_action = intentAction)
 ```
 <!--Java-->
 ```java
@@ -121,14 +121,6 @@ Before relaying the intent, the wallet must attach its signature, transforming i
 Signed Intents contain a unique ID, and also data on which wallet approved the action.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Wallet } from "marmojs";
-
-const wallet = new Wallet("<private key here>");
-
-signedIntent = wallet.sign(intent);
-```
 <!--Python-->
 ```python
 from marmopy import Intent, Wallet
@@ -137,6 +129,14 @@ wallet = Wallet("<private key here>")
 intent = Intent(intent_action = intentAction)
 
 signedIntent = wallet.sign(intent)
+```
+<!--JavaScript-->
+```js
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+
+signedIntent = wallet.sign(intent);
 ```
 <!--Java-->
 ```java
@@ -156,12 +156,6 @@ SignedIntent signedIntent = SignedIntentBuilder.aSignedIntent()
 When an Intent is already signed, it's ready to be sent to a relayer; this relayer is going to perform the requested actions on the Blockchain.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { SignedIntent } from "marmojs";
-
-signedIntent.relay();
-```
 <!--Python-->
 ```python
 from marmopy import Intent, Wallet
@@ -172,6 +166,12 @@ intent = Intent(intent_action = intentAction)
 signedIntent = wallet.sign(intent)
 
 signedIntent.relay()
+```
+<!--JavaScript-->
+```js
+import { SignedIntent } from "marmojs";
+
+signedIntent.relay();
 ```
 <!--Java-->
 ```java
@@ -192,14 +192,6 @@ signedIntent.relay()
 By default, the SDK uses the default provider to obtain the relayer but is possible to pass your custom provider to the `relay()` method. 
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Provider, SignedIntent } from "marmojs";
-
-const myProvider = new Provider("<eth node url>", "<relayer url>")
-
-signedIntent.relay(myProvider);
-```
 <!--Python-->
 ```python
 from marmopy import Intent, Wallet, Provider
@@ -211,6 +203,14 @@ signedIntent = wallet.sign(intent)
 
 my_provider = Provider("<eth node url>", "<relayer url>")
 signedIntent.relay(my_provider)
+```
+<!--JavaScript-->
+```js
+import { Provider, SignedIntent } from "marmojs";
+
+const myProvider = new Provider("<eth node url>", "<relayer url>")
+
+signedIntent.relay(myProvider);
 ```
 <!--Java-->
 ```java
@@ -242,14 +242,6 @@ Intent execution is an asynchronous process; the time range goes from a couple o
 If the status is pending, the intent wasn't registered on the blockchain yet. This process can take from a couple of minutes to several hours.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { SignedIntent } from "marmojs";
-
-const status = await signedIntent.status();
-
-console.log(status.code); // 'pending'
-```
 <!--Python-->
 ```python
 from marmopy import SignedIntent
@@ -257,6 +249,14 @@ from marmopy import SignedIntent
 status = signedIntent.status()
 
 print(status["code"]) # 'pending'
+```
+<!--JavaScript-->
+```js
+import { SignedIntent } from "marmojs";
+
+const status = await signedIntent.status();
+
+console.log(status.code); // 'pending'
 ```
 <!--Java-->
 ```java
@@ -275,16 +275,6 @@ If the status is settling or completed, the intent is registered on the blockcha
 The result of the call can be accessed on the receipt of the status.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-timport { SignedIntent } from "marmojs";
-
-const status = await signedIntent.status();
-
-console.log(status.code); // 'completed'
-console.log(status.receipt.block); // 4059291
-console.log(status.receipt.success); // true or false
-```
 <!--Python-->
 ```python
 from marmopy import SignedIntent
@@ -295,6 +285,16 @@ print(status["code"]) # 'completed'
 
 print(status["receipt"]["block"]) # 4059291
 print(status["receipt"]["success"]) # True / False
+```
+<!--JavaScript-->
+```js
+timport { SignedIntent } from "marmojs";
+
+const status = await signedIntent.status();
+
+console.log(status.code); // 'completed'
+console.log(status.receipt.block); // 4059291
+console.log(status.receipt.success); // true or false
 ```
 <!--Java-->
 ```java
@@ -316,13 +316,13 @@ Transactions in Ethereum can fail and revert all changes performed, and a broad 
 The receipt contains a `success` flag to know if an Intent execution was successful or not.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-console.log(status.receipt.success); // true or false
-```
 <!--Python-->
 ```python
 print(status["receipt"]["success"]) # True / False
+```
+<!--JavaScript-->
+```js
+console.log(status.receipt.success); // true or false
 ```
 <!--Java-->
 ```java
@@ -330,15 +330,11 @@ System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-## Receipt output
+### Receipt output
 
 If the Intent succeeded this receipt contains the output of the called function, it can be accessed as an array of values.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-todo
-```
 <!--Python-->
 ```python
 status = signed_intent.status()
@@ -366,6 +362,10 @@ print(status['receipt']['result']['output'][0])
 # "0xa922927dced73e8a0b1e6b7c93eb2b1ca7d84dbf"
 
 ```
+<!--JavaScript-->
+```js
+todo
+```
 <!--Java-->
 ```java
 todo
@@ -379,10 +379,6 @@ Intent execution may fail if a contract reverts the transaction, this may be cau
 Marmo tries to parse the 'Revert' and return an Error message.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-todo
-```
 <!--Python-->
 ```python
 status = signed_intent.status()
@@ -406,6 +402,10 @@ print(status)
 print(status['receipt']['result']['error'])
 # "This is the error 1"
 
+```
+<!--JavaScript-->
+```js
+todo
 ```
 <!--Java-->
 ```java

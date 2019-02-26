@@ -10,19 +10,6 @@ Wallets are used to known the address of the Marmo wallet, and to sign intents t
 Creates a new wallet instance
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Wallet } from "marmojs"
-
-new Wallet(key, config)
-```
-#### Parameters
-1. `private_key` - `string`: The private key to use when creating the wallet. Used to sign Intents.
-2. `configuration` - `Config`: (semi-optional) The configuration to use in order to derivate the wallet address, by default uses the global configuration, throws if not available. 
-
-#### Return
-`Wallet` object used to sign Intents and obtain the wallet address.
-
 <!--Python-->
 ```python
 from marmopy import Wallet
@@ -32,6 +19,19 @@ Wallet(private or credentials, configuration (optional))
 
 #### Parameters
 1. `private_key` - `string | Credentials`: The private key to use when creating the wallet. Used to sign Intents.
+2. `configuration` - `Config`: (semi-optional) The configuration to use in order to derivate the wallet address, by default uses the global configuration, throws if not available. 
+
+#### Return
+`Wallet` object used to sign Intents and obtain the wallet address.
+
+<!--JavaScript-->
+```js
+import { Wallet } from "marmojs"
+
+new Wallet(key, config)
+```
+#### Parameters
+1. `private_key` - `string`: The private key to use when creating the wallet. Used to sign Intents.
 2. `configuration` - `Config`: (semi-optional) The configuration to use in order to derivate the wallet address, by default uses the global configuration, throws if not available. 
 
 #### Return
@@ -48,8 +48,8 @@ todo
 The address of the wallet, can receive and send funds, eth, tokens, etc.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
+<!--Python-->
+```python
 wallet.address
 ```
 
@@ -57,8 +57,8 @@ wallet.address
 
 * `string` - Address of the Marmo wallet
 
-<!--Python-->
-```python
+<!--JavaScript-->
+```js
 wallet.address
 ```
 
@@ -77,8 +77,8 @@ todo
 The address signing the Intents, a regultar Ethereum address derivated from the private key.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
+<!--Python-->
+```python
 wallet.signer
 ```
 
@@ -86,8 +86,8 @@ wallet.signer
 
 * `string` - Address of the wallet signer
 
-<!--Python-->
-```python
+<!--JavaScript-->
+```js
 wallet.signer
 ```
 
@@ -106,8 +106,8 @@ todo
 Signs an Intent using the wallet
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
+<!--Python-->
+```python
 wallet.sign(intent)
 ```
 
@@ -119,8 +119,8 @@ wallet.sign(intent)
 
 `SignedIntent`, signature with intent attached
 
-<!--Python-->
-```python
+<!--JavaScript-->
+```js
 wallet.sign(intent)
 ```
 

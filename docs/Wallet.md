@@ -14,19 +14,19 @@ Wallets can be created at any moment, even if the client is offline. The Marmo S
 Wallet creation is free, and there is no limit on how many wallets can be created using the SDK, the process is instantaneous, and the wallet is ready to be used as soon as the address is obtained.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Wallet } from "marmojs";
-
-const wallet = new Wallet("<private key here>");
-console.log(wallet.address); // The address of the Marmo wallet
-```
 <!--Python-->
 ```python
 from marmopy import Wallet
 
 wallet = Wallet("<private key here>")
 wallet.address # The address of the Marmo wallet
+```
+<!--JavaScript-->
+```js
+import { Wallet } from "marmojs";
+
+const wallet = new Wallet("<private key here>");
+console.log(wallet.address); // The address of the Marmo wallet
 ```
 <!--Java-->
 ```java
@@ -46,6 +46,15 @@ If a wallet is created without providing a configuration to the SDK, the wallet 
 If a global configuration is defined, the SDK will automatically assign that configuration to all new wallets, unless it's specified a custom configuration upon creation.
 
 <!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+from marmopy import Wallet, Conf
+
+custom_conf = Conf("<init contract>", "<factory>", "<multi_dependency_contract>", 3)
+
+wallet = Wallet("<private key here>", custom_conf)
+wallet.address # The address of the Marmo wallet
+```
 <!--JavaScript-->
 ```js
 import { Wallet, Config } from "marmojs";
@@ -60,15 +69,6 @@ const customConfig = new Config(
 const wallet = new Wallet("<private key here>", customConfig);
 
 wallet.address; // The address of the Marmo wallet
-```
-<!--Python-->
-```python
-from marmopy import Wallet, Conf
-
-custom_conf = Conf("<init contract>", "<factory>", "<multi_dependency_contract>", 3)
-
-wallet = Wallet("<private key here>", custom_conf)
-wallet.address # The address of the Marmo wallet
 ```
 <!--Java-->
 ```java
