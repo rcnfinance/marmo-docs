@@ -48,15 +48,15 @@ id = keccak(wallet, implementation, data)
 > An intent only has an ID when paired with a wallet, for that reason the ID is only available in a signed intent object.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-signedIntent = wallet.sign(intent)
-signedIntent.id
-```
 <!--Python-->
 ```python
 signed_intent = wallet.sign(intent)
 signer_intent.id
+```
+<!--JavaScript-->
+```js
+signedIntent = wallet.sign(intent)
+signedIntent.id
 ```
 <!--Java-->
 ```java
@@ -69,15 +69,15 @@ todo
 To execute a SignedIntent it has to be sent to a relayer; the relayer wraps the intent in a transaction calling the wallet contract.
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-signedIntent = wallet.sign(intent)
-signedIntent.relay();
-```
 <!--Python-->
 ```python
 signed_intent = wallet.sign(intent)
 signer_intent.relay()
+```
+<!--JavaScript-->
+```js
+signedIntent = wallet.sign(intent)
+signedIntent.relay();
 ```
 <!--Java-->
 ```java
@@ -92,15 +92,15 @@ todo
 #### Using a custom provider
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-signedIntent = wallet.sign(intent)
-signedIntent.relay(provider);
-```
 <!--Python-->
 ```python
 signed_intent = wallet.sign(intent)
 signer_intent.relay(provider)
+```
+<!--JavaScript-->
+```js
+signedIntent = wallet.sign(intent)
+signedIntent.relay(provider);
 ```
 <!--Java-->
 ```java
