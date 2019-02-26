@@ -139,3 +139,72 @@ The relayer exposes a `POST \relay` endpoint that accepts a JSON Object with the
 }
 ```
 
+### Status
+
+Provides a receipt containing the state of execution of a relayed signed Intent, there are three possible states:
+
+#### Status code - pending
+
+The Intent is pending of execution.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+status = signed_intent.status()
+print(status['code'])
+# pending
+```
+<!--JavaScript-->
+```js
+// TODO
+```
+<!--Java-->
+```java
+// TODO
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Status code - settling / completed
+
+The Intent was already executed, if the status code is 'settling' it may revert to pending, but if the code is 'completed' it can be considered final.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+status = signed_intent.status()
+print(status)
+'''
+{
+   "code":"completed",
+   "receipt": {
+      "tx_hash":"0x44133201e131e91f1a98adf68c288bb47942a5b1347f1b52063fbdec9dec9f86",
+      "relayer":"0xC2D9018441eDa5953f548746B5327C809DF058c2",
+      "block_number":5089939,
+      "success":true,
+      "result": {
+         "output": [
+            "0xa922927drbced73e8a0b1e6b7c93eb2b1ca7d84dbf",
+            8000321
+         ]
+      }
+   }
+}
+'''
+```
+<!--JavaScript-->
+```js
+// TODO
+```
+<!--Java-->
+```java
+// TODO
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+| Key          | Type       | Description                                               |
+|--------------|------------|-----------------------------------------------------------|
+| tx_hash      | String     |  Hash of the transaction that executed the Intent.        |
+| relayer      | String     | Address of the relayer that executed the Intent.          |
+| block_number | Number     | Number of the block when executed the transaction.        |
+| success      | Boolean    | true If the execution of the Intent didn't throw an error |
+| result       | Dictionary | Result of the execution of the Intent                     |
