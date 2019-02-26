@@ -10,19 +10,6 @@ The provider configuration object is used to define the Ethereum node and Relaye
 Creates a new provider object
 
 <!--DOCUSAURUS_CODE_TABS-->
-<!--JavaScript-->
-```js
-import { Provider } from "marmojs";
-
-new Provider(eth_node, relayer_url);
-```
-#### Parameters
-1. `eth_node` - `string | Web3`: The Ethereum node used to read information of the network (It can be provided as a Web3 instance).
-2. `relayer_url` - `string`: The Relayer used to send Intents.
-
-#### Return
-`Provider` object used to relay and query intents.
-
 <!--Python-->
 ```python
 from marmopy import Provider
@@ -30,6 +17,19 @@ from marmopy import Provider
 Provider(eth_node, relayer_url)
 ```
 
+#### Parameters
+1. `eth_node` - `string | Web3`: The Ethereum node used to read information of the network (It can be provided as a Web3 instance).
+2. `relayer_url` - `string`: The Relayer used to send Intents.
+
+#### Return
+`Provider` object used to relay and query intents.
+
+<!--JavaScript-->
+```js
+import { Provider } from "marmojs";
+
+new Provider(eth_node, relayer_url);
+```
 #### Parameters
 1. `eth_node` - `string | Web3`: The Ethereum node used to read information of the network (It can be provided as a Web3 instance).
 2. `relayer_url` - `string`: The Relayer used to send Intents.
@@ -54,15 +54,15 @@ new Provider(ethNode, relayerUrl);
 Defines the proper as the default global provider.
 
 <!--DOCUSAURUS_CODE_TABS-->
+<!--Python-->
+```python
+provider.as_default()
+```
 <!--JavaScript-->
 ```js
 provider.asDefault()
 ```
 
-<!--Python-->
-```python
-provider.as_default()
-```
 <!--Java-->
 ```java
 provider.asDefault();
