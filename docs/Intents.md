@@ -308,6 +308,7 @@ System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
 > When the status code is settling, it means that the Intent was executed, but it may get reverted by internal workings of the Ethereum network, this status usually last for 8 minutes.
+
 ### Receipt success
 
 Transactions in Ethereum can fail and revert all changes performed, and a broad set of reasons can cause this, (asserts, low fees, code errors, etc.)
@@ -328,3 +329,105 @@ print(status["receipt"]["success"]) # True / False
 System.out.println(status.getReceipt().getSuccess()); // true or false
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
+
+## Receipt output
+
+If the Intent succeeded this receipt contains the output of the called function, it can be accessed as an array of values.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+status = signed_intent.status()
+print(status)
+
+'''
+{
+   "code":"completed",
+   "receipt": {
+      "tx_hash":"0x44133201e131e91f1a98adf68c288bb47942a5b1347f1b52063fbdec9dec9f86",
+      "relayer":"0xC2D9018441eDa5953f548746B5327C809DF058c2",
+      "block_number":5089939,
+      "success":true,
+      "result": {
+         "output": [
+            "0xa922927dced73e8a0b1e6b7c93eb2b1ca7d84dbf",
+            8000321
+         ]
+      }
+   }
+}
+'''
+
+print(status['receipt']['result']['output'][0])
+# "0xa922927dced73e8a0b1e6b7c93eb2b1ca7d84dbf"
+
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Error output
+
+Intent execution may fail if a contract reverts the transaction, this may be caused by a wide variety of circumstances (Ej: not enough funds, lack of permissions, etc.)
+
+Marmo tries to parse the 'Revert' and return an Error message.
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--JavaScript-->
+```js
+todo
+```
+<!--Python-->
+```python
+status = signed_intent.status()
+print(status)
+
+'''
+{
+   "code":"completed",
+   "receipt":{
+      "tx_hash":"0x9758ba2535f438dd47fb86b7935c8cc5d0d6bb2c2b27a12c727ddbc833aba920",
+      "relayer":"0xC2D9018441eDa5953f548746B5327C809DF058c2",
+      "block_number":5089995,
+      "success":false,
+      "result":{
+         "error":"This is the error 1"
+      }
+   }
+}
+'''
+
+print(status['receipt']['result']['error'])
+# "This is the error 1"
+
+```
+<!--Java-->
+```java
+todo
+```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+#### Parse Error
+
+If the function execution returned an unexpected result, it might fail to be parsed by Marmo; this can be caused by calling a Contract with an incorrect ABI, or by faulty contract behavior.
+
+```
+{
+   "code":"completed",
+   "receipt":{
+      "tx_hash":"0x2758ba2535f438dd47fb86b7935c8cc5d0d6bb2c2b27a12c527ddbc833aba92a",
+      "relayer":"0xC2D9018441eDa5953f548746B5327C809DF058c2",
+      "block_number":5089997,
+      "success":true,
+      "result":{
+         "parse_error":"Unknown result"
+      }
+   }
+}
+```
