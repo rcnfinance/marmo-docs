@@ -21,8 +21,8 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Marmo documentation', // Title for your website.
-  tagline: 'Documentation of the Ethereum wallet developer suit Marmo',
+  title: 'Marmo Documentation', // Title for your website.
+  tagline: 'Marmo SDK simplifies interactions with the Ethereum network, allowing you to focus on building great blockchain products without worrying about the blockchain',
   url: 'https://marmo.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,7 +38,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'intro', label: 'Docs'}
+    {href: 'https://marmo.io/', label: 'Home'},
+    {doc: 'intro', label: 'Docs'},
+    {href: 'https://github.com/ripio?utf8=%E2%9C%93&q=marmo-', label: 'Github'}
   ],
 
   // If you have users set above, you add it here:
