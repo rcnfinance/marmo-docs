@@ -37,52 +37,42 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <a href={this.docUrl('setup')}>
+              Getting Started
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.docUrl('wallet')}>
+              Create Wallets
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('intents')}>
+              Intents and transactions
             </a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
+            <a href="https://marmo.io/">Home</a>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="https://discord.gg/nj5Uaj"
               target="_blank"
               rel="noreferrer noopener">
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Twitter
+              Project chat
             </a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/ripio?utf8=%E2%9C%93&q=marmo-">GitHub</a>
             <a
               className="github-button"
-              href={this.props.config.repoUrl}
+              href="https://github.com/ripio/marmo-contracts"
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count="true"
-              data-count-aria-label="# stargazers on GitHub"
+              data-count-href="/ripio/marmo-contracts"
+              data-show-count="false"
+              data-count-aria-label="# Marmo on GitHub"
               aria-label="Star this project on GitHub">
               Star
             </a>
           </div>
         </section>
-        <section className="copyright">{this.props.config.copyright} - Docs powered by <a href="https://docusaurus.io/" target="_blank">Docusaurus </a></section>
+        <section className="copyright">{this.props.config.copyright} <a target='_blank' href='https://ripiocredit.network/'>Ripio Credit Network</a>  - Docs powered by <a href="https://docusaurus.io/" target="_blank">Docusaurus </a></section>
       </footer>
     );
   }
