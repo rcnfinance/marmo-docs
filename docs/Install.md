@@ -1,9 +1,7 @@
 ---
 id: setup
-title: First steps
+title: Install
 ---
-
-# Install
 
 Marmo library is available in Java, Javascript and Python, the library has pre-loaded the configuration to interact with Marmo in the Ropsten testnet and Ethereum Mainnet.
 
