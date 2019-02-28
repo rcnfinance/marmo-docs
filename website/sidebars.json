@@ -6,13 +6,13 @@
       "wallets",
       "intents_transactions"
     ],
-    "API Reference": [
-      "api_config",
-      "api_provider",
-      "api_wallet",
-      "api_intent_action",
-      "api_intent",
-      "api_signed_intent"
+    "Elements and Parameters": [
+      "config",
+      "provider",
+      "wallet",
+      "intent_action",
+      "intent",
+      "signed_intent"
     ]
   }
 }
