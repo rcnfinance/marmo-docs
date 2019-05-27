@@ -120,8 +120,8 @@ We provide a Relayer and Ethereum Node intended to be used by developers on the 
 ```python
 from marmopy import Provider
 
-eth_node = "https://ropsten.node.rcn.loans:8545/"
-relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/"
+eth_node = "https://ropsten-node.rcn.loans/"
+relayer = "https://marmo-relayer-ropsten.rcn.loans/"
 
 provider = Provider(eth_node, relayer)
 ```
@@ -129,8 +129,8 @@ provider = Provider(eth_node, relayer)
 ```js
 import { Provider } from "marmojs";
 
-const ethNode = "https://ropsten.node.rcn.loans:8545/";
-const relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
+const ethNode = "https://ropsten-node.rcn.loans/";
+const relayer = "https://marmo-relayer-ropsten.rcn.loans/";
 
 provider = new Provider(ethNode, relayer);
 ```
@@ -138,8 +138,8 @@ provider = new Provider(ethNode, relayer);
 ```java
 import network.marmoj.config.Provider;
 
-String ethNode = "https://ropsten.node.rcn.loans:8545/";
-String relayer = "http://ec2-18-188-99-203.us-east-2.compute.amazonaws.com/";
+String ethNode = "https://ropsten-node.rcn.loans/";
+String relayer = "https://marmo-relayer-ropsten.rcn.loans/";
 
 Provider provider = new Provider(ethNode, relayer);
 ```
