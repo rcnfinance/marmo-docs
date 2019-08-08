@@ -52,7 +52,7 @@ DefaultConf.ROPSTEN.as_default()
 import { DefaultConf } from "marmojs";
 
 // Select the Ropsten testnet configuration
-DefaulltConf.ROPSTEN.asDefault();
+DefaultConf.ROPSTEN.asDefault();
 ```
 <!--Java-->
 ```java
